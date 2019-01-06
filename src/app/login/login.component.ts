@@ -10,7 +10,7 @@ import {AuthService} from '../shared/auth.service';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   error:string;
-  constructor( private formBuilder: FormBuilder,private auth: AuthService) {
+  constructor( private formBuilder: FormBuilder, public auth: AuthService) {
   }
 
   ngOnInit() {

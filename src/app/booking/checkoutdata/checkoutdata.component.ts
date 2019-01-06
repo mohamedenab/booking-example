@@ -7,13 +7,12 @@ import {DataService} from '../Booking.service';
   styleUrls: ['./checkoutdata.component.scss']
 })
 export class CheckoutdataComponent implements OnInit {
-  data: object;
+  data: any;
   constructor(private dataService: DataService) {
   }
 
   ngOnInit() {
     this.data = this.dataService.data;
-    console.log(this.data);
   }
 
 }

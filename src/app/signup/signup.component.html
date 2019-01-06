@@ -5,7 +5,7 @@
         <div class="form-group">
           <label for="email">email</label>
           <div class="input-con">
-            <mat-form-field [color]="primary">
+            <mat-form-field >
               <input matInput type="email"
                      formControlName="email"
                      class="form-control"
@@ -62,8 +62,6 @@
              signupForm.get('confirmPassword').value != null"> Password Doesn't match
               </mat-error>
             </mat-form-field>
-
-
           </div>
         </div>
       </div>
