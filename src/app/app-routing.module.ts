@@ -9,10 +9,7 @@ import {CheckoutdataComponent} from './booking/checkoutdata/checkoutdata.compone
 import {SignupComponent} from './signup/signup.component';
 
 const appRoutes: Routes =[
-  {path:'login' , component: LoginComponent},
-  {path:'signup' , component: SignupComponent},
   {path:'' , component: BookingComponent},
-
   {path:'booking', component:BookingComponent},
   {path:'checkout', component:CheckoutdataComponent, canActivate:[AuthGuard]},
   {path:'contact-us', component:ContactComponent} ,

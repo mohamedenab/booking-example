@@ -14,7 +14,11 @@ export class AuthService {
   signUp(email: string, password: string) {
     firebase.auth().createUserWithEmailAndPassword(email, password).then(
       response => {
-        this.router.navigate(['/booking']);
+        if(this.router.url.includes('/booking')) {
+          this.router.navigate(['/checkout']);
+        } else {
+          this.router.navigate([`/booking`]);
+        }
         firebase.auth().currentUser.getIdToken().then(
           (token: string) => this.token = token
         );
@@ -30,7 +34,12 @@ export class AuthService {
     firebase.auth().signInWithEmailAndPassword(email, password)
       .then(
         response => {
-          this.router.navigate(['/booking']);
+
+            if(this.router.url.includes('/booking')) {
+            this.router.navigate(['/checkout']);
+          } else {
+            this.router.navigate([`/booking`]);
+          }
           firebase.auth().currentUser.getIdToken().then(
             (token: string) => this.token = token
           );
@@ -58,7 +67,9 @@ export class AuthService {
   }
 
   logout() {
-
+    firebase.auth().signOut()
+      .then((res) => this.router.navigate(['/']));
+    this.token = null;
   }
 
   resetPassword(email: string) {

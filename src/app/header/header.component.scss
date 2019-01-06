@@ -12,6 +12,7 @@ nav {
       }
     }
   }
+
   .hamburger {
     margin-left: auto;
     padding: $hamburger-padding-y $hamburger-padding-x;
@@ -122,7 +123,10 @@ nav {
         text-transform: capitalize;
         font-weight: bold;
         color: black;
-
+        &:hover {
+          cursor: pointer;
+          color: $seccolor;
+        }
       }
       .active {
         color: $seccolor;

@@ -1,22 +1,22 @@
-import { DataService } from './booking/Booking.service';
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {DataService} from './booking/Booking.service';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppComponent } from './app.component';
-import { BookingComponent } from './booking/booking.component';
-import { ContactComponent } from './contact/contact.component';
-import { HeaderComponent } from './header/header.component';
-import { LoginComponent } from './login/login.component';
-import { FooterComponent } from './footer/footer.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AppRoutingModule } from './app-routing.module';
-import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
-import { HttpClientModule } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
-import { CollapseModule } from 'ngx-bootstrap';
-import { AuthService } from './shared/auth.service';
-import { AuthGuard } from './shared/auth.guard.service';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {AppComponent} from './app.component';
+import {BookingComponent} from './booking/booking.component';
+import {ContactComponent} from './contact/contact.component';
+import {HeaderComponent} from './header/header.component';
+import {LoginComponent} from './login/login.component';
+import {FooterComponent} from './footer/footer.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {AppRoutingModule} from './app-routing.module';
+import {BsDropdownModule} from 'ngx-bootstrap/dropdown';
+import {HttpClientModule} from '@angular/common/http';
+import {RouterModule} from '@angular/router';
+import {CollapseModule} from 'ngx-bootstrap';
+import {AuthService} from './shared/auth.service';
+import {AuthGuard} from './shared/auth.guard.service';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
   MatAutocompleteModule,
   MatBadgeModule,
@@ -44,11 +44,12 @@ import {
   MatRippleModule,
   MatSelectModule
 } from '@angular/material';
+import {NgbActiveModal, NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
-import { CheckoutdataComponent } from './booking/checkoutdata/checkoutdata.component';
-import { SignupComponent } from './signup/signup.component';
-import { FotterComponent } from './fotter/fotter.component';
-import { LoaderComponent } from './loader/loader.component';
+import {CheckoutdataComponent} from './booking/checkoutdata/checkoutdata.component';
+import {SignupComponent} from './signup/signup.component';
+import {FotterComponent} from './fotter/fotter.component';
+import {LoaderComponent} from './loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -77,10 +78,11 @@ import { LoaderComponent } from './loader/loader.component';
     MatDatepickerModule,
     MatSelectModule,
     MatInputModule,
-    MatNativeDateModule,MatIconModule
+    MatNativeDateModule, MatIconModule, NgbModule
   ],
   exports: [],
-  providers: [AuthService, AuthGuard, DataService],
+  providers: [AuthService, AuthGuard, DataService ,NgbActiveModal],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule {
+}
