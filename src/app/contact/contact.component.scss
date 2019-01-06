@@ -1,0 +1,31 @@
+@import "../../sass/var";
+.contact {
+  background: $seccolor;
+  padding: 2%;
+  .off-con {
+    margin-top: 10%;
+    &:last-child {
+      margin-bottom: 20%;
+    }
+    .tit-con {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 300;
+      .title {
+        display: inline-block;
+      }
+      .disc {
+        display: inline-block;
+      }
+    }
+  }
+  form {
+    input, textarea {
+      width: 100%;
+      padding: 2%;
+      border-radius: 0.2rem;
+      border: none;
+      margin-top: 1%;
+    }
+  }
+}

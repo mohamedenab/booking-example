@@ -1,0 +1,11 @@
+@import "../login/login.component";
+mat-form-field.mat-form-field {
+color: white;
+}
+.mat-focused .mat-form-field-label ,.mat-form-field-appearance-legacy .mat-form-field-label{
+  color: white !important;
+}
+
+
+
+

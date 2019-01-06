@@ -1,18 +1,86 @@
+import { DataService } from './booking/Booking.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BookingComponent } from './booking/booking.component';
+import { ContactComponent } from './contact/contact.component';
+import { HeaderComponent } from './header/header.component';
+import { LoginComponent } from './login/login.component';
+import { FooterComponent } from './footer/footer.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AppRoutingModule } from './app-routing.module';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+import { CollapseModule } from 'ngx-bootstrap';
+import { AuthService } from './shared/auth.service';
+import { AuthGuard } from './shared/auth.guard.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {
+  MatAutocompleteModule,
+  MatBadgeModule,
+  MatBottomSheetModule,
+  MatButtonModule,
+  MatButtonToggleModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatChipsModule,
+  MatStepperModule,
+  MatDatepickerModule,
+  MatDialogModule,
+  MatDividerModule,
+  MatExpansionModule,
+  MatGridListModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatMenuModule,
+  MatNativeDateModule,
+  MatPaginatorModule,
+  MatProgressBarModule,
+  MatProgressSpinnerModule,
+  MatRadioModule,
+  MatRippleModule,
+  MatSelectModule
+} from '@angular/material';
+
+import { CheckoutdataComponent } from './booking/checkoutdata/checkoutdata.component';
+import { SignupComponent } from './signup/signup.component';
+import { FotterComponent } from './fotter/fotter.component';
+import { LoaderComponent } from './loader/loader.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ContactComponent,
+    HeaderComponent,
+    LoginComponent,
+    FooterComponent,
+    BookingComponent,
+    CheckoutdataComponent,
+    SignupComponent,
+    FotterComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    FormsModule,
+    HttpClientModule,
+    AppRoutingModule,
+    RouterModule,
+    ReactiveFormsModule,
+    BsDropdownModule.forRoot(),
+    CollapseModule.forRoot(),
+    BrowserAnimationsModule,
+    MatAutocompleteModule,
+    MatDatepickerModule,
+    MatSelectModule,
+    MatInputModule,
+    MatNativeDateModule,MatIconModule
   ],
-  providers: [],
+  exports: [],
+  providers: [AuthService, AuthGuard, DataService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

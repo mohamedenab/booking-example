@@ -1,0 +1,42 @@
+
+<div class="container">
+  <div class="row">
+    <div class="detail">
+      <h1>flight card</h1>
+      <hr>
+      <div class="row">
+        <div class="col-lg-3">
+          Flight No.xxxxx12346
+        </div>
+        <div class="col-lg-3">
+
+          <span>from</span>: {{this.data.to}}
+
+        </div>
+        <div class="col-lg-3">
+
+
+          <span>to</span> {{this.data.from}}
+
+        </div>
+        <div class="col-lg-3">
+
+          <span>date</span>: {{(this.data.date).toISOString()}}
+
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div *ngFor="let passengersData of this.data.passengersData;let i = index " class="row mt-3">
+          <h5 class="font-weight-bold">passenger: {{ i + 1 }}</h5>
+          <div class="col-lg-4">
+            <div class="mt-2">firstName: {{passengersData.firstName}}</div>
+            <div class="mt-2">lastName: {{passengersData.lastName}}</div>
+            <div class="mt-2">birthDay: {{passengersData.birthDay}}</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

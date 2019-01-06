@@ -1,0 +1,74 @@
+@import "../../sass/var";
+
+.login {
+  background: linear-gradient(to right, #662d91 0, #3873b3 43.7%, #00c9dd 100%); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  padding: 5%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  .input {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    .form-group {
+      display: inherit;
+      width: 100%;
+      label {
+        display: flex;
+        align-items: center;
+        margin: 0;
+        color: white;
+        text-transform: capitalize;
+        width: 100%;
+      }
+      .input-con {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        label {
+          color: white;
+
+        }
+        input {
+          &:focus {
+            box-shadow: none;
+          }
+
+        }
+      }
+
+    }
+
+  }
+  .mat-form-field-appearance-legacy .mat-form-field-label {
+    color: white;
+    text-transform: capitalize;
+  }
+  .signup {
+    text-align: center;
+    margin-top: 3%;
+    color: white;
+
+  }
+  .btn {
+    text-transform: capitalize;
+    background-color: #3873b3;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    width: 20%;
+    margin: auto;
+    border: 0;
+    @media screen and (max-width: 425px) {
+      width: 30%;
+    }
+    &:hover {
+      background-color: #00c9dd;
+    }
+    &:disabled {
+      &:hover {
+        background-color: #3873b3;
+      }
+    }
+  }
+}
