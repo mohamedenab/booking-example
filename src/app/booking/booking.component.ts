@@ -1,14 +1,17 @@
 import {DataService} from './Booking.service';
 import {
-  Component,
-  OnInit,
+  Component, HostListener,
+  OnInit, ViewChild,
 } from '@angular/core';
 import {
   Validators,
   FormArray,
-  FormBuilder
+  FormBuilder, NgForm
 } from '@angular/forms';
 import {Router} from '@angular/router';
+import {AuthService} from '../shared/auth.service';
+import {LoginComponent} from '../login/login.component';
+import {MatDialog} from '@angular/material';
 
 
 const getOptions = (options: string[], except: string) =>
@@ -33,7 +36,9 @@ export class BookingComponent implements OnInit {
   constructor(
     private route: Router,
     private fb: FormBuilder,
-    private dataService: DataService
+    private dataService: DataService,
+    private auth: AuthService,
+    public dialog: MatDialog
   ) {
   }
 
@@ -62,7 +67,13 @@ export class BookingComponent implements OnInit {
 
   checkout() {
     this.dataService.setData(this.form.value);
-    this.route.navigate(['checkout']);
+    if (this.auth.islogin()) {
+      this.route.navigate(['checkout']);
+    } else {
+      const dialogRef = this.dialog.open(LoginComponent, {
+        width: '500px'
+      });
+    }
   }
 
   get fromChoices() {
@@ -72,4 +83,6 @@ export class BookingComponent implements OnInit {
   get toChoices() {
     return getOptions(this.options, this.form.get('from').value);
   }
+
+
 }

@@ -36,10 +36,9 @@
       </div>
       <span *ngIf="this.auth.printErorr">please Enter a vaild Email or enter the correct password</span>
 
-      <button class="btn btn-block" type="submit" (click)="this.activeModal.dismiss('Cross click')"  aria-label="Close"  >login</button>
-      <a  class="signup" (click)="openVerticallyCentered(content) " onclick="this.activeModal.dismiss('Cross click')">I don't have account</a>
+      <button class="btn btn-block" type="submit" (click)="login()"  aria-label="Close"  >login</button>
+      <a  class="signup" (click)="onClick()">I don't have account</a>
     </form>
 
-    <ng-template #content let-modal>
-      <app-signup></app-signup>
-    </ng-template>
+
+

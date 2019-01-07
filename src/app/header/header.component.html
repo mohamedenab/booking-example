@@ -30,17 +30,15 @@
         <a class="nav-link" routerLink="/contact-us" routerLinkActive="active">contact us
         </a>
       </li>
-      <li class="nav-item" *ngIf="!this.auth.islogin()">
-        <a class="nav-link" (click)="openVerticallyCentered(content)" routerLinkActive="active">login
-        </a>
-      </li>
-      <li class="nav-item" *ngIf="this.auth.islogin()">
-        <a class="nav-link" routerLink="/booking" (click)="logout()" >logout
-        </a>
-      </li>
+      <!--<li class="nav-item" *ngIf="!this.auth.islogin()">-->
+        <!--<a class="nav-link" (click)="openDialog()">login-->
+        <!--</a>-->
+      <!--</li>-->
+      <!--<li class="nav-item" *ngIf="this.auth.islogin()">-->
+        <!--<a class="nav-link" routerLink="/booking" (click)="logout()" >logout-->
+        <!--</a>-->
+      <!--</li>-->
     </ul>
   </div>
 </nav>
-<ng-template #content let-modal>
-  <app-login></app-login>
-</ng-template>
+

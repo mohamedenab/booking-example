@@ -78,11 +78,13 @@ import {LoaderComponent} from './loader/loader.component';
     MatDatepickerModule,
     MatSelectModule,
     MatInputModule,
-    MatNativeDateModule, MatIconModule, NgbModule
+    MatNativeDateModule, MatIconModule,   MatDialogModule,
+    NgbModule
   ],
   exports: [],
-  providers: [AuthService, AuthGuard, DataService ,NgbActiveModal],
-  bootstrap: [AppComponent]
+  providers: [AuthService, AuthGuard, DataService ],
+  bootstrap: [AppComponent],
+  entryComponents:[LoginComponent,SignupComponent]
 })
 export class AppModule {
 }

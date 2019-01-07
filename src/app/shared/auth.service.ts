@@ -3,6 +3,7 @@ import {Router} from '@angular/router';
 import {Injectable} from '@angular/core';
 
 
+
 @Injectable()
 export class AuthService {
   token: string;
@@ -31,6 +32,7 @@ export class AuthService {
   }
 
   loginUser(email: string, password: string) {
+    this.loading = true
     firebase.auth().signInWithEmailAndPassword(email, password)
       .then(
         response => {
@@ -40,15 +42,18 @@ export class AuthService {
           } else {
             this.router.navigate([`/booking`]);
           }
+
           firebase.auth().currentUser.getIdToken().then(
             (token: string) => this.token = token
           );
+
         }
       ).catch(
       error => {
         this.error = error;
       }
     );
+
   }
 
   gettoken() {
